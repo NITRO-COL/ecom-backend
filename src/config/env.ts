@@ -38,4 +38,20 @@ export const env = {
   cloudinaryApiSecret: required('CLOUDINARY_API_SECRET', 'your_cloudinary_api_secret'),
 };
 
-export const allowedOrigins = [env.webOrigin, env.adminOrigin];
+const extraOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',').map((o) => o.trim())
+  : [];
+
+export const allowedOrigins = [
+  env.webOrigin,
+  env.adminOrigin,
+  'https://sanwariya-brand-house.vercel.app',
+  'https://sanwariya-brand-house-admin.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'http://localhost:5173',
+  'http://127.0.0.1:3000',
+  'http://127.0.0.1:3001',
+  'http://127.0.0.1:5173',
+  ...extraOrigins,
+];

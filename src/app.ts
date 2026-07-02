@@ -29,7 +29,9 @@ export function createApp(): Application {
     cors({
       origin(origin, cb) {
         if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-        return cb(new Error('Not allowed by CORS'));
+        // eslint-disable-next-line no-console
+        console.warn(`⚠️ Blocked by CORS: ${origin}`);
+        return cb(new Error(`Not allowed by CORS: ${origin}`));
       },
       credentials: true,
     })
