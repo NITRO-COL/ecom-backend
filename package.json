@@ -11,10 +11,15 @@
     "typecheck": "tsc --noEmit",
     "postinstall": "npm run build"
   },
-  "keywords": ["ecommerce", "sanwariya", "api"],
+  "keywords": [
+    "ecommerce",
+    "sanwariya",
+    "api"
+  ],
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.10.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

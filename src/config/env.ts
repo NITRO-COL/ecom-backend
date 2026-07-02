@@ -32,6 +32,10 @@ export const env = {
   adminOrigin: process.env.ADMIN_ORIGIN ?? 'http://localhost:3001',
 
   publicUrl: process.env.PUBLIC_URL ?? 'http://localhost:5000',
+
+  cloudinaryCloudName: required('CLOUDINARY_CLOUD_NAME', 'wwoo1e3p'),
+  cloudinaryApiKey: required('CLOUDINARY_API_KEY', '225666741183477'),
+  cloudinaryApiSecret: required('CLOUDINARY_API_SECRET', 'your_cloudinary_api_secret'),
 };
 
 export const allowedOrigins = [env.webOrigin, env.adminOrigin];
