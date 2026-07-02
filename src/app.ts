@@ -48,6 +48,15 @@ export function createApp(): Application {
 
   app.use(globalLimiter);
 
+  // Health Check Endpoint
+  app.get('/health', (_req, res) => {
+    res.status(200).json({
+      status: 'ok',
+      uptime: process.uptime(),
+      time: Date.now(),
+    });
+  });
+
   // API
   app.use('/api', routes);
 
